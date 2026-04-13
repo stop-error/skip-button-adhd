@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="https://unpkg.com/jspsych@8.2.3"></script>
+  <link href="https://unpkg.com/jspsych@8.2.3/css/jspsych.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/@jspsych/plugin-survey@4.0.0"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@jspsych/plugin-survey@4.0.0/css/survey.min.css">
+  <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@2.1.0"></script>
+
+  <script src="scripts/survey.js"></script>
   <meta charset="utf-8">
   <title>Joel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +47,7 @@
 <body>
   <div id="overlay-container">
     <!-- We've added a sample button. Feel free to remove it: -->
+
     <button id="skip">
       Skip Ad...
     </button>
@@ -67,15 +75,15 @@
         // we call fail to restart. You're welcome to replace this with a survey
         // or other interaction instead (see examples/survey).
         if (event.data.type === 'adFinished') {
-          skipButton.style.display = 'none';
-          window.top.postMessage({ type: 'fail' }, '*');
+          init()
         }
       });
 
       // Your ad overlay code goes here, we've added a simple example below:
       skipButton.addEventListener('click', () => {
         skipButton.style.display = 'none';
-        adSuccess();
+        parent.video.style.opacity = "0.2"
+        init()
       });
 
     })(window, document);
