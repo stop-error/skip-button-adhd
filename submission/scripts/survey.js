@@ -311,13 +311,13 @@ function startSurvey() {
 
     const adhdLikely = {
         type: jsPsychHtmlKeyboardResponse,
-        stimulus: "<script>function adSuccess(){window.top.postMessage({ type: 'success' }, '*')}</script><style>.white-box{height:500px;line-height: 2.0;margin-left:20px;margin-right:20px;margin-bottom:20px;background-color: white;}</style><div class='white-box'><h2>Your Results</h2><h4>Based off your survey results, you are experiencing symptoms indicative of adult ADHD. Please note this survey is not a diagnostic tool and does not replace the advice of a licensed medical professional.</h4><h4><a href='https://www.mayoclinic.org/diseases-conditions/adult-adhd/symptoms-causes/syc-20350878' target='_blank'>Learn more about Adult ADHD from the Mayo Clinic</a></h4><h5>Thank you for participating in this computer-aided enrichment activity.</h5><button type='button' onclick='adSuccess()'>End Survey</button></div>",
+        stimulus: "<script src='success.js'></script><style>.white-box{height:500px;line-height: 2.0;margin-left:20px;margin-right:20px;margin-bottom:20px;background-color: white;}</style><div class='white-box'><h2>Your Results</h2><h4>Based off your survey results, you are experiencing symptoms indicative of adult ADHD. Please note this survey is not a diagnostic tool and does not replace the advice of a licensed medical professional.</h4><h4><a href='https://www.mayoclinic.org/diseases-conditions/adult-adhd/symptoms-causes/syc-20350878' target='_blank'>Learn more about Adult ADHD from the Mayo Clinic</a></h4><h5>Thank you for participating in this computer-aided enrichment activity.</h5><button type='button' onclick='adSuccess()'>End Survey</button></div>",
         //trial_duration: 15000
     }
 
     const adhdNotLikely = {
         type: jsPsychHtmlKeyboardResponse,
-        stimulus: "<script>function adSuccess(){window.top.postMessage({ type: 'success' }, '*')}</script><style>.white-box{height:500px;line-height: 2.0;margin-left:20px;margin-right:20px;margin-bottom:20px;background-color: white;}</style><div class='white-box'><h2>Your Results</h2><h4>Based off your survey results, you are not experiencing symptoms indicative of adult ADHD. Please note this survey is not a diagnostic tool and does not replace the advice of a licensed medical professional.</h4><h5>Thank you for participating in this computer-aided enrichment activity.</h5><button type='button' onclick='adSuccess()'</button></div>",
+        stimulus: "<script src='success.js'></script><style>.white-box{height:500px;line-height: 2.0;margin-left:20px;margin-right:20px;margin-bottom:20px;background-color: white;}</style><div class='white-box'><h2>Your Results</h2><h4>Based off your survey results, you are not experiencing symptoms indicative of adult ADHD. Please note this survey is not a diagnostic tool and does not replace the advice of a licensed medical professional.</h4><h5>Thank you for participating in this computer-aided enrichment activity.</h5><button type='button' onclick=''</button></div>",
         //trial_duration: 15000
     }
 
