@@ -82,8 +82,9 @@
       // Your ad overlay code goes here, we've added a simple example below:
       skipButton.addEventListener('click', () => {
         skipButton.style.display = 'none';
+        window.top.postMessage({ type: 'pause' }, '*')
         parent.video.style.opacity = "0.2"
-        init()
+        startSurvey()
       });
 
     })(window, document);

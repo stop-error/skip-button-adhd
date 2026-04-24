@@ -1,31 +1,19 @@
-var firstRun = true
-score = 0
-
-function init() {
-
-    if (firstRun === true) {
-        firstRun = false
-        window.top.postMessage({ type: 'pause' }, '*')
-        startSurvey()
-    } else {
-        console.log("skip button clicked after first run, nothing will happen")
-        return
-    }
-}
+//The whole program is one function!? Where have I seen that before...
 
 function startSurvey() {
 
+    var score = 0
+
     const adSurveyJson = {
         "title": "Advertiser Survey",
-        "completedHtml": "<h4>You should not see this!</h4>",
         "completedHtmlOnCondition": [
             {
             "expression": "{correctAnswers} >= 4",
-            "html": "<style>h1,h2,h3,h4,h5,h6{line-height: 0.4;}</style><h2>Your Results</h2><h4>Based off your survey results, you are experiencing symptoms indicative of adult ADHD. Please note this survey is not a diagnostic tool and does not replace the advice of a licensed medical professional.</h4><h6>Thank you for participating in this computer-aided enrichment activity.</h6>"
+            "html": "<style>h2,h4,h6{line-height: 0.4;}</style><h2>Your Results</h2><h4>Based off your survey results, you are experiencing symptoms indicative of adult ADHD. Please note this survey is not a diagnostic tool and does not replace the advice of a licensed medical professional.</h4><h6>Thank you for participating in this computer-aided enrichment activity.</h6>"
             },
             {
             "expression": "{correctAnswers} <= 3",
-            "html": "<style>h1,h2,h3,h4,h5,h6{line-height: 0.4;}</style><h2>Your Results</h2><h4>Based off your survey results, you are <strong>not</strong> experiencing symptoms indicative of adult ADHD. Please note this survey is not a diagnostic tool and does not replace the advice of a licensed medical professional.</h4><h6>Thank you for participating in this computer-aided enrichment activity.</h6>"
+            "html": "<style>h2,,h4,h6{line-height: 0.4;}</style><h2>Your Results</h2><h4>Based off your survey results, you are <strong>not</strong> experiencing symptoms indicative of adult ADHD. Please note this survey is not a diagnostic tool and does not replace the advice of a licensed medical professional.</h4><h6>Thank you for participating in this computer-aided enrichment activity.</h6>"
             }
         ],
         "pages": [
@@ -173,7 +161,6 @@ function startSurvey() {
                         value === "5) Very Often"
                     ) {
                         score++
-                        console.log(score)
                     }
                 }
             if (key === "question4" ||
@@ -183,7 +170,6 @@ function startSurvey() {
                         value === "5) Very Often"
                     ) {
                         score++
-                        console.log(score)
                     }
                 }
         }
